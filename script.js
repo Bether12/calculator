@@ -129,22 +129,50 @@ buttons.addEventListener('click', (e)=>{
                 break;
             }
         case 'b+':
-            if(number1=='') number1=Number(display.textContent);
+            if(number1==''){ 
+                number1=Number(display.textContent);
+            }else if(operator!=''){
+                number2=Number(number2);
+                display.textContent=operate(number1,number2,operator);
+                number1=operate(number1,number2,operator);
+                number2='';
+            }
             operator='+';
             display.textContent+='+';
             break;
         case 'b-':
-            if(number1=='') number1=Number(display.textContent);
+            if(number1==''){ 
+                number1=Number(display.textContent);
+            }else if(operator!=''){
+                number2=Number(number2);
+                display.textContent=operate(number1,number2,operator);
+                number1=operate(number1,number2,operator);
+                number2='';
+            }
             operator='-';
             display.textContent+='-';
             break;
         case 'b*':
-            if(number1=='') number1=Number(display.textContent);
+            if(number1==''){ 
+                number1=Number(display.textContent);
+            }else if(operator!=''){
+                number2=Number(number2);
+                display.textContent=operate(number1,number2,operator);
+                number1=operate(number1,number2,operator);
+                number2='';
+            }
             operator='*';
             display.textContent+='*';
             break;
         case 'b/':
-            if(number1=='') number1=Number(display.textContent);
+            if(number1==''){ 
+                number1=Number(display.textContent);
+            }else if(operator!=''){
+                number2=Number(number2);
+                display.textContent=operate(number1,number2,operator);
+                number1=operate(number1,number2,operator);
+                number2='';
+            }
             operator='/';
             display.textContent+='/';
             break;
