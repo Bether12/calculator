@@ -29,7 +29,7 @@ function operate(number1, number2, operator){
         case '/':
             return divide(number1, number2);
         default:
-            return 'Operator not supported';
+            return 'Operation not supported, try again';
     }
 }
 
