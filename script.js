@@ -1,17 +1,17 @@
 function add(num1, num2){
-    return Number((num1 + num2).toFixed(2));
+    return Number((num1 + num2).toFixed(1));
 }
 
 function subtract(num1, num2){
-    return Number((num1 - num2).toFixed(2));
+    return Number((num1 - num2).toFixed(1));
 }
 
 function multiply(num1,num2){
-    return Number((num1 * num2).toFixed(2));
+    return Number((num1 * num2).toFixed(1));
 }
 
 function divide(num1, num2){
-    return Number((num1/num2).toFixed(2));
+    return Number((num1/num2).toFixed(1));
 }
 
 let number1 = '';
