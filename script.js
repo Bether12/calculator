@@ -58,7 +58,12 @@ function handle(e){
     }else if(btn=='.'){
         if(decimal.point==false){
             decimal.point=true;
-            display.textContent+='.';
+            if(operator!==''){
+                number2+=btn;
+                display.textContent+=btn;
+            }else{
+                display.textContent+=btn;
+            }
         }
     }else if(btn=='='){
         number2=Number(number2);
@@ -77,17 +82,33 @@ function handle(e){
         decimal.point=false;
         decimal.number=false;
     }else{
-        if(number1!==''){
-            if(operator!==''){
-                number2+=btn;
-                display.textContent+=btn;
+        if(decimal.point==false){
+            if(number1!==''){
+                if(operator!==''){
+                    number2+=btn;
+                    display.textContent+=btn;
+                }else{
+                    display.textContent='';
+                    number1='';
+                    display.textContent=btn;
+                }
             }else{
-                display.textContent='';
-                number1='';
-                display.textContent=btn;
+                display.textContent+=btn;
             }
-        }else{
-            display.textContent+=btn;
+        }else if(decimal.point==true&&decimal.number==false){
+            if(number1!==''){
+                if(operator!==''){
+                    number2+=btn;
+                    display.textContent+=btn;
+                    decimal.number=true;
+                }else{//change this
+                    number1+=btn;
+                    display.textContent+=btn;
+                    decimal.number=true;
+                }
+            }else{
+                display.textContent+=btn;
+            }
         }
     }
 }
