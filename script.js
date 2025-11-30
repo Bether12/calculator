@@ -79,6 +79,11 @@ function handle(e){
             if(operator!==''){
                 number2+=btn;
                 display.textContent+=btn;
+            }else if(number1!==''){
+                number1=String(number1).split('');
+                number1.push('.');
+                number1=Number(number1.join(''));
+                display.textContent+=btn;
             }else{
                 display.textContent+=btn;
             }
@@ -106,7 +111,7 @@ function handle(e){
             display.textContent=display2.join('');
         }else{
             if(number1!==''){
-                number1=Array(number1);
+                number1=String(number1).split('');
                 number1.pop();
                 number1=Number(number1.join(''));
                 let display2=display.textContent.split('');
