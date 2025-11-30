@@ -16,6 +16,7 @@ function divide(num1, num2){
 
 let number1 = '';
 let number2 = '';
+let result = '';
 let operator = '';
 
 function operate(number1, number2, operator){
@@ -27,7 +28,11 @@ function operate(number1, number2, operator){
         case '*':
             return multiply(number1, number2);
         case '/':
-            return divide(number1, number2);
+            if(number2===0){
+                return 'ERROR, cannot divide by 0';
+            }else{
+                return divide(number1, number2);
+            }
         default:
             return 'Operation not supported, try again';
     }
