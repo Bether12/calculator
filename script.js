@@ -150,13 +150,14 @@ function handle(e){
                     number2+=btn;
                     display.textContent+=btn;
                     decimal.number=true;
-                }else{//change this
+                }else{
                     number1+=btn;
                     display.textContent+=btn;
                     decimal.number=true;
                 }
             }else{
                 display.textContent+=btn;
+                decimal.number=true;
             }
         }
     }
