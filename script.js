@@ -50,6 +50,8 @@ function handle(e){
         }
         operator=btn;
         display.textContent+=btn;
+    }else if(btn=='.'){
+        
     }else if(btn=='='){
         number2=Number(number2);
         display.textContent=operate(number1,number2,operator);
