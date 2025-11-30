@@ -62,13 +62,15 @@ function handle(e){
             decimal.point=false;
             decimal.number=false;
         }else if(operator!=''){
+            decimal.point=false;
+            decimal.number=false;
             number2=Number(number2);
             display.textContent=operate(number1,number2,operator);
             number1=operate(number1,number2,operator);
             number2='';
-            decimal.point=false;
-            decimal.number=false;
         }
+        decimal.point=false;
+        decimal.number=false;
         operator=btn;
         display.textContent+=btn;
     }else if(btn=='.'){
@@ -82,13 +84,13 @@ function handle(e){
             }
         }
     }else if(btn=='='){
+        decimal.point=false;
+        decimal.number=false;
         number2=Number(number2);
         display.textContent=operate(number1,number2,operator);
         number1=operate(number1,number2,operator);
         number2='';
         operator='';
-        decimal.point=false;
-        decimal.number=false;
     }else if(btn=='C'){
         display.textContent='';
         number1='';
