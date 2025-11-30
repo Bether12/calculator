@@ -96,26 +96,26 @@ function handle(e){
             number2=number2.split('');
             number2.pop();
             number2=number2.join('');
-            display.textContent=display.textContent.split('');
-            display.textContent.pop();
-            display.textContent=display.textContent.join('');
+            let display2=display.textContent.split('');
+            display2.pop();
+            display.textContent=display2.join('');
         }else if(operator!==''){
             operator='';
-            display.textContent=display.textContent.split('');
-            display.textContent.pop();
-            display.textContent=display.textContent.join('');
+            let display2=display.textContent.split('');
+            display2.pop();
+            display.textContent=display2.join('');
         }else{
             if(number1!==''){
                 number1=Array(number1);
                 number1.pop();
                 number1=Number(number1.join(''));
-                display.textContent=display.textContent.split('');
-                display.textContent.pop();
-                display.textContent=display.textContent.join('');   
+                let display2=display.textContent.split('');
+                display2.pop();
+                display.textContent=display2.join('');   
             }else{
-                display.textContent=display.textContent.split('');
-                display.textContent.pop();
-                display.textContent=display.textContent.join('');
+                let display2=display.textContent.split('');
+                display2.pop();
+                display.textContent=display2.join('');
             }
             if(display.textContent.includes('.')!==false){
                 decimal.point=false;
