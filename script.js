@@ -55,7 +55,12 @@ function operate(number1, number2, operator){
 }
 
 function handle(e){
-    let btn = e.target.id.split('')[1];
+    let btn ='';
+    if(e.key!=='undefine'){
+        btn = e.key;
+    }else{
+        btn = e.target.id.split('')[1];
+    }
     if(btn=='+'||btn=='-'||btn=='*'||btn=='/'){
         if(number1==''){ 
             number1=Number(display.textContent);
@@ -98,7 +103,7 @@ function handle(e){
         number1=operate(number1,number2,operator);
         number2='';
         operator='';
-    }else if(btn=='D'){
+    }else if(btn=='d'){
         if(number2!==''){
             number2=number2.split('');
             number2.pop();
@@ -129,7 +134,7 @@ function handle(e){
                 decimal.number=false;
             }
         }
-    }else if(btn=='C'){
+    }else if(btn=='c'){
         display.textContent='';
         number1='';
         number2='';
@@ -174,5 +179,7 @@ function handle(e){
 
 const display = document.querySelector('#display');
 const buttons = document.querySelector('#buttons');
+const body = document.querySelector('body');
 
 buttons.addEventListener('click', handle);
+body.addEventListener('keyup', handle);
