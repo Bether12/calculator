@@ -1,16 +1,32 @@
 function add(num1, num2){
+    if(Number.isInteger(Number((num1 + num2).toFixed(1)))!=true){
+        decimal.point=true;
+        decimal.number=true;
+    }
     return Number((num1 + num2).toFixed(1));
 }
 
 function subtract(num1, num2){
+    if(Number.isInteger(Number((num1 + num2).toFixed(1)))!=true){
+        decimal.point=true;
+        decimal.number=true;
+    }
     return Number((num1 - num2).toFixed(1));
 }
 
 function multiply(num1,num2){
+    if(Number.isInteger(Number((num1 + num2).toFixed(1)))!=true){
+        decimal.point=true;
+        decimal.number=true;
+    }
     return Number((num1 * num2).toFixed(1));
 }
 
 function divide(num1, num2){
+    if(Number.isInteger(Number((num1 + num2).toFixed(1)))!=true){
+        decimal.point=true;
+        decimal.number=true;
+    }
     return Number((num1/num2).toFixed(1));
 }
 
