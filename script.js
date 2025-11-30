@@ -43,16 +43,20 @@ function handle(e){
     if(btn=='+'||btn=='-'||btn=='*'||btn=='/'){
         if(number1==''){ 
             number1=Number(display.textContent);
+            decimal.point=false;
+            decimal.number=false;
         }else if(operator!=''){
             number2=Number(number2);
             display.textContent=operate(number1,number2,operator);
             number1=operate(number1,number2,operator);
             number2='';
+            decimal.point=false;
+            decimal.number=false;
         }
         operator=btn;
         display.textContent+=btn;
     }else if(btn=='.'){
-        if(decimal.number==false){
+        if(decimal.point==false){
             decimal.point=true;
             display.textContent+='.';
         }
@@ -62,12 +66,16 @@ function handle(e){
         number1=operate(number1,number2,operator);
         number2='';
         operator='';
+        decimal.point=false;
+        decimal.number=false;
     }else if(btn=='C'){
         display.textContent='';
         number1='';
         number2='';
         result='';
         operator='';
+        decimal.point=false;
+        decimal.number=false;
     }else{
         if(number1!==''){
             if(operator!==''){
