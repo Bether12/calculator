@@ -38,6 +38,10 @@ function operate(number1, number2, operator){
     }
 }
 
+function handle(e){
+    console.log(e.target.id.split('')[1]);
+}
+
 const display = document.querySelector('#display');
 const buttons = document.querySelector('#buttons');
 
