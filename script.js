@@ -64,6 +64,7 @@ function handle(e){
         }else if(operator!=''){
             decimal.point=false;
             decimal.number=false;
+            number1=Number(number1);
             number2=Number(number2);
             display.textContent=operate(number1,number2,operator);
             number1=operate(number1,number2,operator);
@@ -82,7 +83,7 @@ function handle(e){
             }else if(number1!==''){
                 number1=String(number1).split('');
                 number1.push('.');
-                number1=Number(number1.join(''));
+                number1=number1.join('');
                 display.textContent+=btn;
             }else{
                 display.textContent+=btn;
@@ -91,6 +92,7 @@ function handle(e){
     }else if(btn=='='){
         decimal.point=false;
         decimal.number=false;
+        number1=Number(number1);
         number2=Number(number2);
         display.textContent=operate(number1,number2,operator);
         number1=operate(number1,number2,operator);
@@ -155,8 +157,10 @@ function handle(e){
                     number2+=btn;
                     display.textContent+=btn;
                     decimal.number=true;
-                }else{
-                    number1+=btn;
+                }else{//fix this
+                    number1=String(number1).split('');
+                    number1.push(btn);
+                    number1=Number(number1.join(''));
                     display.textContent+=btn;
                     decimal.number=true;
                 }
