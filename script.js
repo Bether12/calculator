@@ -130,7 +130,7 @@ function handle(e){
         operator='';
         decimal.point=false;
         decimal.number=false;
-    }else{
+    }else if(btn=='1'||btn=='2'||btn=='3'||btn=='4'||btn=='5'||btn=='6'||btn=='7'||btn=='8'||btn=='9'||btn=='0'){
         if(decimal.point==false){
             if(number1!==''){
                 if(operator!==''){
