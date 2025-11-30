@@ -43,39 +43,38 @@ function handle(e){
     if(btn=='+'||btn=='-'||btn=='*'||btn=='/'){
         if(number1==''){ 
             number1=Number(display.textContent);
-            console.log(number1,number2,result,operator);
         }else if(operator!=''){
             number2=Number(number2);
             display.textContent=operate(number1,number2,operator);
             number1=operate(number1,number2,operator);
             number2='';
-            console.log(number1,number2,result,operator);
         }
         operator=btn;
         display.textContent+=btn;
-        console.log(number1,number2,result,operator);
     }else if(btn=='='){
         number2=Number(number2);
         display.textContent=operate(number1,number2,operator);
         number1=operate(number1,number2,operator);
         number2='';
         operator='';
-        console.log(number1,number2,result,operator);
     }else if(btn=='C'){
         display.textContent='';
         number1='';
         number2='';
         result='';
         operator='';
-        console.log(number1,number2,result,operator);
     }else{
         if(number1!==''){
-            number2+=btn;
-            display.textContent+=btn;
-            console.log(number1,number2,result,operator);
+            if(operator!==''){
+                number2+=btn;
+                display.textContent+=btn;
+            }else{
+                display.textContent='';
+                number1='';
+                display.textContent=btn;
+            }
         }else{
             display.textContent+=btn;
-            console.log(number1,number2,result,operator);
         }
     }
 }
